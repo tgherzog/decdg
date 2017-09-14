@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!-- UserVoice widget example with latest recommended CSS styling  -->
+<html>
+<head>
+
+<style type="text/css">
+
+/* body CSS for testing only */
+body {
+  font-family: Georgia,serif;
+  font-size: 1.25em;
+  color: #909;
+  margin: 3px 9px;
+}
+
+@font-face {
+  font-family:icons;
+  src:url(fonts/icons.eot);
+  src:url(fonts/icons.eot?#iefix) format("embedded-opentype"),
+      url(fonts/icons.woff) format("woff"),
+	  url(fonts/icons.ttf) format("truetype"),
+	  url(fonts/icons.svg#Icons) format("svg");
+  font-weight:400;
+  font-style:normal;
+}
+
+#helplink {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 100;
+  cursor: pointer;
+  background: transparent;
+  width: 150px;
+}
+
+#helplink button {
+  border: 0;
+  border-radius: 2px;
+  background: #22a6f5;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 12px;
+  line-height: 26px;
+  height: 30px;
+  opacity: 0.9;
+  position: relative;
+  width: 100%;
+  padding: 2px 6px;
+  display: inline-block;
+}
+
+#helplink button:before {
+  font-family: icons;
+  font-variant: normal;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  content: '\E311';
+  float: left;
+}
+
+#helplink button:hover {
+  opacity: 1;
+}
+
+</style>
+
+<script type="text/javascript">
+
+/* Code to add User Voice implementation script. The gnarly string in the URL identifies our account
+
+   There are a couple of simpler alternatives to add the script, including the jQuery.getScript function,
+   or simply linking it with an ordinary <script/> tag. I've used the jQuery option successfully, but the 
+   plain <script/> tag approach tends to cause security certificate issues with IE, IE9 in particular. I'm
+   trying to get more clarity with UserVoice.
+
+   Complete documentation here:
+
+   https://olddemo.uservoice.com/knowledgebase/articles/209927 (classic widget, as demonstrated here)
+   https://developer.uservoice.com/docs/widgets (latest widget, not demonstrated here)
+*/
+(function() {
+  var uv=document.createElement('script');
+  uv.type='text/javascript';
+  uv.async=true;
+  uv.src='//widget.uservoice.com/XzQsWhTqmnE8dYDOJ0HjJQ.js';
+  
+  var s=document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(uv,s)
+})()
+
+</script>
+
+<script type="text/javascript">
+
+function uvClick() {
+  // set following parameter to site identifier: Data, Databank, Finances or DataCatalog
+  var siteIdentifier = 'DataCatalog';
+
+  var uvOptions = {
+    mode: 'support',
+    primary_color: '#54584c',
+    link_color: '#1f95dd'
+  };
+
+  /* uncomment next line to restrict sidebar articles to a particular topic and set topic_id accordingly.
+     Do not set to null or to a non-existent topic. However, you can set to an empty topic (with no articles)
+	 to provide an initially empty sidebar.
+
+     Note that this only affects the initial article display. Searches based on the user's ticket will
+	 search the entire knowledge base and currently there is no mechanism to control this or disable
+	 'instant answers'.
+
+	 This only works on the 'classic' widget. The latest widget doesn't have a sidebar so this option has
+	 no effect.
+  */
+  // uvOptions.topic_id = 19371;
+
+  UserVoice = window.UserVoice || [];
+  UserVoice.push(['setCustomFields', { 'Origin': siteIdentifier }]);
+  UserVoice.push(['showLightbox', 'classic_widget', uvOptions]);
+}
+
+</script>
+
+</head>
+
+<body>
+<h3>How to implement the UserVoice widget on a World Bank website</h3>
+<p>Your content here</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec urna arcu, vitae gravida tortor. Nam mattis, neque a interdum consectetur, massa odio tristique nisl, id sagittis metus turpis ac tellus. Suspendisse congue faucibus lacus, a tempus orci luctus et. Sed purus elit, consectetur vestibulum tempor suscipit, semper at ligula. Nullam eu lacinia ligula. Vestibulum volutpat ornare tortor, eu consequat enim semper auctor. Etiam eu eros in nibh ullamcorper vestibulum. Ut at ante metus, at congue turpis. Aliquam erat volutpat. Nunc vestibulum consequat euismod. Sed at ligula id felis varius sollicitudin. Phasellus rutrum dictum luctus. Curabitur aliquet faucibus aliquet. Aenean ante velit, interdum vulputate sollicitudin sed, aliquet id ligula. Integer sed arcu ut ligula dictum pharetra. Maecenas commodo ligula in libero lacinia a egestas nibh eleifend.</p>
+<p>Suspendisse ut sem sem. Sed non feugiat sapien. Donec ornare nulla eget lacus fringilla nec dignissim mi fringilla. Etiam massa orci, varius faucibus gravida in, vestibulum quis lectus. Vivamus et ligula at ligula hendrerit mattis ut in est. Praesent vel mi et metus elementum tincidunt. Maecenas mattis fermentum risus, id varius nisl pharetra a. Etiam a malesuada nulla. Morbi commodo, urna non pharetra vehicula, enim enim posuere ligula, nec scelerisque lacus augue eget ante. Cras quis justo commodo lectus porta pellentesque. Etiam purus nibh, commodo quis luctus a, accumsan at turpis. Fusce ut lacus et elit facilisis commodo. Cras elementum bibendum ligula, ut aliquam leo lacinia vitae. Mauris vel tempus elit.</p>
+<p>Proin vel varius urna. Nam id dolor nunc, et tempus purus. Aliquam quis justo metus, ac mollis tortor. Nam eros metus, venenatis tristique sodales nec, ultrices ac elit. Nulla dictum malesuada arcu a tincidunt. Vestibulum luctus iaculis mollis. Aenean in magna ligula. Pellentesque posuere commodo diam eu cursus. Praesent quis nisl dolor, vel lacinia neque. Phasellus vitae lorem neque, ac imperdiet nisl.</p>
+<p>Integer semper semper leo, vitae egestas ipsum condimentum in. Aliquam eget ipsum placerat felis dignissim euismod. Aliquam neque neque, scelerisque eu auctor iaculis, viverra quis est. Vestibulum vel lorem eros, id auctor quam. Morbi sed odio quam, ac accumsan metus. Morbi pharetra augue quis lacus laoreet mollis. Curabitur diam arcu, rutrum nec condimentum sit amet, ullamcorper sed quam. Pellentesque a eros ac lorem egestas tempor quis non dolor.</p>
+<p>Ut sapien ligula, commodo non euismod vitae, vehicula eget odio. Maecenas vulputate erat elit, congue suscipit erat. Suspendisse potenti. Sed bibendum malesuada lectus nec hendrerit. Donec condimentum arcu sed quam dignissim ornare. Quisque tempor nisl eu metus adipiscing in tincidunt augue adipiscing. Mauris scelerisque mattis nulla, ut scelerisque ante varius sit amet. Aenean bibendum tempor porttitor. Aenean aliquam, dui ac ultricies malesuada, elit ipsum dictum neque, sit amet posuere lorem mi porttitor urna. Fusce id nunc quis nunc consequat sollicitudin. Pellentesque eleifend scelerisque luctus. Sed vulputate dapibus mi sed tempus.</p>
+<p>Praesent tincidunt libero non nisl rhoncus a feugiat tortor egestas. Aenean magna massa, volutpat nec luctus a, venenatis ut nulla. Morbi quis lectus tellus, ac porttitor tellus. Donec eleifend gravida lacus, semper luctus nulla gravida id. Aliquam hendrerit mollis ante ac rutrum. Donec nulla ante, gravida nec iaculis ut, varius in nibh. Phasellus varius purus in urna porta ac elementum urna molestie. Donec quis tristique diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc vitae libero lectus, non volutpat elit.</p>
+<p>Morbi bibendum nulla a nibh lacinia ut posuere dui dictum. Ut hendrerit blandit turpis, at posuere erat scelerisque ac. Mauris dictum rutrum pharetra. Etiam sodales vehicula porta. Donec at sollicitudin nunc. Nulla facilisi. Maecenas placerat, nisi sed luctus lobortis, dolor augue blandit felis, non convallis quam tortor sit amet lectus. Sed commodo venenatis felis quis consequat.</p>
+<p>Mauris mattis libero vitae urna scelerisque posuere. Cras consequat nisl ut justo vehicula semper. Quisque id arcu nibh. Donec porttitor, augue id mattis rutrum, ipsum quam fermentum lectus, quis tempus augue risus nec erat. Sed augue neque, feugiat in pellentesque a, euismod sit amet orci. Etiam consectetur, leo in egestas semper, sapien lacus molestie nisl, at consectetur velit lectus eu justo. Praesent eu volutpat eros.</p>
+<p>Donec sapien massa, scelerisque non ornare non, ullamcorper sit amet tortor. Donec feugiat mollis lacinia. Praesent nec dolor odio. Duis sit amet ipsum urna. Vivamus ac neque ut nisi ullamcorper tincidunt eu eget enim. Donec adipiscing tristique ante sed hendrerit. Integer varius iaculis condimentum. Aliquam volutpat ultricies enim, et hendrerit justo imperdiet et.</p>
+<p>Nullam nec arcu tortor. Vivamus a ligula mauris. Mauris sed lorem urna, non condimentum velit. Cras aliquam libero ut purus hendrerit non bibendum neque bibendum. Fusce sed tellus quam, eu posuere felis. Integer sed quam lacus, in adipiscing lacus. Nam gravida ultricies augue vitae mattis. Nam sodales enim non nisl dignissim luctus. Cras faucibus ante at eros tincidunt non interdum urna tristique. Curabitur dignissim lectus sodales quam tincidunt vulputate quis id ligula. Nulla non urna et arcu ultricies mollis. In eleifend condimentum porta. Phasellus eget massa vitae magna lacinia sollicitudin. Nam at risus tortor. Pellentesque sed nibh orci, congue faucibus felis.</p>
+
+
+
+<!-- this block can go anywhere -->
+<div id="helplink">
+<button onclick="javascript:uvClick()"><span>Help / Feedback</span></button>
+</div>
+
+
+</body>
+</html>
